@@ -1,5 +1,5 @@
 import { NpmPublishExecutorSchema } from './schema';
-import { exec } from 'child_process';
+import { execSync } from 'child_process';
 
 export default async function runExecutor(options: NpmPublishExecutorSchema) {
   const { libName, libPath } = options;
@@ -8,7 +8,7 @@ export default async function runExecutor(options: NpmPublishExecutorSchema) {
     ? `${libPath}/${libName}`
     : `./dist/libs/${libName}`;
 
-  exec(
+  execSync(
     `cd ${directory} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
   );
 
