@@ -22,9 +22,10 @@ Maybe you have a more sophisticated setup and therefore your library is in a dif
 ## update-version
 This executor updates the `package.json` version in the specified library. The executor **requires** the following config options:
 
-- **version**: the new version
 - **libName**: the name of the library. The path will be constructed in the following way: `libs/${libName}/package.json`
 
 if your library is in a different folder, you can always optionally specify the library path:
 
 - **libPath**: optional library path. for example: `libs/my-domain`
+
+**The update-version executor expects a VERSION env variable to be present**
