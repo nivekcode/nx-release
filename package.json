@@ -6,7 +6,8 @@
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
-    "bump-versions": "rjp package.json version $VERSION && rjp libs/nx-release/package.json version $VERSION"
+    "bump-versions": "rjp package.json version $VERSION && rjp libs/nx-release/package.json version $VERSION",
+    "publish": "nx run-many -t publish"
   },
   "private": true,
   "dependencies": {
