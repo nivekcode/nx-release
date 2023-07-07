@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kreuzerk/nx-release/compare/v1.0.0...v1.0.1) (2023-07-07)
+
+
+### Bug Fixes
+
+* 🐛 use exec sync ([cae8041](https://github.com/kreuzerk/nx-release/commit/cae80410db9dde03d1ce13d96ef8fccee31bc46f))
+
 ## 1.0.0 (2023-07-07)
 
 
