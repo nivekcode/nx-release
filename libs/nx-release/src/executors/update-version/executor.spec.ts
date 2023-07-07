@@ -14,6 +14,7 @@ describe('ReplaceVersion Executor', () => {
     };
     const expectedPath = `libs/${libName}/package.json`;
 
+    /* eslint-disable */
     jest.spyOn(replaceJsonProp, 'replace').mockImplementation(() => {});
 
     const output = await executor(options);
