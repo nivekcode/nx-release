@@ -7,7 +7,7 @@
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
     "bump-versions": "rjp package.json version $VERSION && rjp libs/nx-release/package.json version $VERSION",
-    "publish": "nx run-many -t publish"
+    "release": "VERSION=$VERSION npm run bump-versions && npm run build && nx run-many -t publish"
   },
   "private": true,
   "dependencies": {
