@@ -60,6 +60,12 @@
           "codeCoverage": true
         }
       }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd ./dist/libs/nx-release && echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc && npm publish"
+      }
     }
   },
   "tags": []

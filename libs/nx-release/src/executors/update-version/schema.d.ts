@@ -1,5 +1,5 @@
 export interface ReplaceVersionExecutorSchema {
-  libraryPath?: string;
-  libraryName: string
+  libPath?: string;
+  libName: string
   version: string
 }

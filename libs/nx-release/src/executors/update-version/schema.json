@@ -5,7 +5,7 @@
   "description": "",
   "type": "object",
   "properties": {
-    "path": {
+    "libName": {
       "type": "string",
       "description": "The name of the library you want to publish",
       "$default": {
@@ -13,7 +13,7 @@
         "index": 0
       }
     },
-    "libraryPath": {
+    "libPath": {
       "type": "string",
       "description": "The path to the library you want to publish (will be combined with the library name)",
       "$default": {
@@ -30,5 +30,5 @@
       }
     }
   },
-  "required": ["libraryName", "version"]
+  "required": ["libName", "version"]
 }

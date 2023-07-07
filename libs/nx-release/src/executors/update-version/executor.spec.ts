@@ -7,12 +7,12 @@ describe('ReplaceVersion Executor', () => {
 
   it('should replace the version with in the default path if no path was provided', async () => {
     const version = '2.0.0';
-    const libraryName = 'foo';
+    const libName = 'foo';
     const options: ReplaceVersionExecutorSchema = {
       version,
-      libraryName
+      libName
     };
-    const expectedPath = `libs/${libraryName}/package.json`;
+    const expectedPath = `libs/${libName}/package.json`;
 
     jest.spyOn(replaceJsonProp, 'replace').mockImplementation(() => {});
 
@@ -24,14 +24,14 @@ describe('ReplaceVersion Executor', () => {
 
   it('should replace the version with the provided path', async () => {
     const version = '2.0.0';
-    const libraryName = 'foo';
-    const libraryPath = './libs/my-domain/test/';
+    const libName = 'foo';
+    const libPath = './libs/my-domain/test';
     const options: ReplaceVersionExecutorSchema = {
       version,
-      libraryName,
-      libraryPath
+      libName,
+      libPath
     };
-    const expectedPath = `libs/${libraryName}/package.json`;
+    const expectedPath = `libs/${libName}/package.json`;
 
     jest.spyOn(replaceJsonProp, 'replace').mockImplementation(() => {});
 

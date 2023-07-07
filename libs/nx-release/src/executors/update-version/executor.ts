@@ -4,11 +4,11 @@ import {replace} from 'replace-json-property';
 export default async function runExecutor(
   options: ReplaceVersionExecutorSchema
 ) {
-  const {libraryName, libraryPath, version} = options;
+  const {libName, libPath, version} = options;
 
-  const packageJsonPath = libraryPath ?
-    `${libraryPath}/${libraryName}/package.json` :
-    `libs/${libraryName}/package.json`
+  const packageJsonPath = libPath ?
+    `${libPath}/${libName}/package.json` :
+    `libs/${libName}/package.json`
 
   replace(packageJsonPath, 'version', version);
 
