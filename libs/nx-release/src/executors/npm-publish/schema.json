@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "NpmPublish executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "libraryName": {
+      "type": "string",
+      "description": "The name of the library you want to publish",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "libraryPath": {
+      "type": "string",
+      "description": "The path to the library you want to publish (will be combined with the library name)",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": ["libraryName"]
+}

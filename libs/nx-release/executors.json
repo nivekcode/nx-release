@@ -1,0 +1,14 @@
+{
+  "executors": {
+    "npm-publish": {
+      "implementation": "./src/executors/npm-publish/executor",
+      "schema": "./src/executors/npm-publish/schema.json",
+      "description": "npm-publish executor"
+    },
+    "replace-version": {
+      "implementation": "./src/executors/replace-version/executor",
+      "schema": "./src/executors/replace-version/schema.json",
+      "description": "replace-version executor"
+    }
+  }
+}
