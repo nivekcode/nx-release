@@ -29,3 +29,11 @@ if your library is in a different folder, you can always optionally specify the 
 - **libPath**: optional library path. for example: `libs/my-domain`
 
 **The update-version executor expects a VERSION env variable to be present**
+
+## build-update-publish
+This executor combines the previous two executors and additionally performs a release. It also accepts the same options as the other ones:
+
+- **libName** (required): name of the library
+- **libPath** (optional): path of the library
+
+** This command expects a valid NPM token to be present as a `NPM_TOKEN` environment variable and the new release version to be present as a `VERSION` variable.
