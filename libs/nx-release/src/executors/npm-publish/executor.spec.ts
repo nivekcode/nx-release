@@ -12,12 +12,12 @@ describe('NpmPublish Executor', () => {
       libName
     };
 
-    jest.spyOn(child_process, 'exec');
+    jest.spyOn(child_process, 'execSync');
     const expectedCommand = `cd ./dist/libs/${libName} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
 
     const output = await executor(options);
 
-    expect(child_process.exec).toHaveBeenCalledWith(expectedCommand)
+    expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand)
     expect(output.success).toBe(true);
   });
 
@@ -29,12 +29,12 @@ describe('NpmPublish Executor', () => {
       libPath
     };
 
-    jest.spyOn(child_process, 'exec');
+    jest.spyOn(child_process, 'execSync');
     const expectedCommand = `cd ${libPath}/${libName} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
 
     const output = await executor(options);
 
-    expect(child_process.exec).toHaveBeenCalledWith(expectedCommand)
+    expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand)
     expect(output.success).toBe(true);
   });
 
