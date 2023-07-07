@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/kreuzerk/nx-release/compare/v2.0.0...v2.1.0) (2023-07-07)
+
+
+### Features
+
+* 🎸 add build, update & publish executor ([80357c1](https://github.com/kreuzerk/nx-release/commit/80357c16c4a0b2484b754e34061e4ae080cb7a48))
+
 ## [2.0.0](https://github.com/kreuzerk/nx-release/compare/v1.0.1...v2.0.0) (2023-07-07)
 
 
