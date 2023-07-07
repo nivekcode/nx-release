@@ -6,13 +6,14 @@ import executor from './executor';
 
 describe('NpmPublish Executor', () => {
 
-  it('should exec with a default libPath if no libPath was provided', async () => {
+  it('should execSync with a default libPath if no libPath was provided', async () => {
     const libName = 'foo';
     const options: NpmPublishExecutorSchema = {
       libName
     };
 
-    jest.spyOn(child_process, 'execSync');
+    /* eslint-disable */
+    jest.spyOn(child_process, 'execSync').mockImplementation((() => {}) as any);
     const expectedCommand = `cd ./dist/libs/${libName} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
 
     const output = await executor(options);
@@ -21,7 +22,7 @@ describe('NpmPublish Executor', () => {
     expect(output.success).toBe(true);
   });
 
-  it('should exec with the provided libPath', async () => {
+  it('should execSync with the provided libPath', async () => {
     const libName = 'foo';
     const libPath = './dist/libs/my-domain';
     const options: NpmPublishExecutorSchema = {
