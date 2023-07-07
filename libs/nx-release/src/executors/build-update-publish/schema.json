@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "BuildUpdatePublish executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "libName": {
+      "type": "string",
+      "description": "The name of the library you want to publish",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": ["libName"]
+}
