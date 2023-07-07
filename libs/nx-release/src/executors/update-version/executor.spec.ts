@@ -2,14 +2,15 @@ import * as replaceJsonProp from 'replace-json-property';
 
 import { ReplaceVersionExecutorSchema } from './schema';
 import executor from './executor';
+import * as process from "process";
 
 describe('ReplaceVersion Executor', () => {
 
   it('should replace the version with in the default path if no path was provided', async () => {
     const version = '2.0.0';
     const libName = 'foo';
+    process.env.VERSION = version;
     const options: ReplaceVersionExecutorSchema = {
-      version,
       libName
     };
     const expectedPath = `libs/${libName}/package.json`;
@@ -27,8 +28,9 @@ describe('ReplaceVersion Executor', () => {
     const version = '2.0.0';
     const libName = 'foo';
     const libPath = './libs/my-domain/test';
+    process.env.VERSION = version;
+
     const options: ReplaceVersionExecutorSchema = {
-      version,
       libName,
       libPath
     };

@@ -20,15 +20,7 @@
         "$source": "argv",
         "index": 0
       }
-    },
-    "version": {
-      "type": "string",
-      "description": "The new version",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
     }
   },
-  "required": ["libName", "version"]
+  "required": ["libName"]
 }
