@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/kreuzerk/nx-release/compare/v1.0.1...v2.0.0) (2023-07-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 version input is no longer supported
+
+### Features
+
+* 🎸 access version from node env ([cc684d3](https://github.com/kreuzerk/nx-release/commit/cc684d348d8430eec09d6450df4b5285973f39f4))
+
 ## [1.0.1](https://github.com/kreuzerk/nx-release/compare/v1.0.0...v1.0.1) (2023-07-07)
 
 
