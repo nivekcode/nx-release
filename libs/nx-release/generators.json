@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "configure-workspace": {
+      "factory": "./src/generators/configure-workspace/generator",
+      "schema": "./src/generators/configure-workspace/schema.json",
+      "description": "configure-workspace generator"
+    }
+  }
+}
