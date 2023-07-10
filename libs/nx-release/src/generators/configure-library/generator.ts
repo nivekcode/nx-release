@@ -4,7 +4,7 @@ import * as inquirer from 'inquirer';
 import * as chalk from "chalk";
 import * as ora from 'ora';
 
-import {getLibraryProjectNames, getLibrarySourceRoot} from "../helpers/projects";
+import {getLibraryProjectNames, getLibraryRoot} from "../helpers/projects";
 
 import {ConfigureLibraryGeneratorSchema} from './schema';
 
@@ -36,7 +36,9 @@ export async function configureLibraryGenerator(
     spinner.text = '🐋 nx-release: configuring executor';
     spinner.start();
 
-    updateJson(tree, `${getLibrarySourceRoot(tree, libName)}/project.json`, (packageJson: any) => {
+    const libraryRoot = getLibraryRoot(tree, libName);
+
+    updateJson(tree, `${libraryRoot}/project.json`, (packageJson: any) => {
       packageJson.targets.release = {
         executor: 'nx-release:build-update-publish',
         options: {
@@ -52,7 +54,7 @@ export async function configureLibraryGenerator(
       spinner.text = '🐋 nx-release: add public publish config';
       spinner.start();
 
-      updateJson(tree, `${projectRoot}/package.json`, (packageJson: any) => {
+      updateJson(tree, `${libraryRoot}/package.json`, (packageJson: any) => {
         packageJson.publishConfig = {
           access: 'public'
         };
