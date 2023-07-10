@@ -1,4 +1,4 @@
-# nx-release
+![](./assets/nx-release-logo.svg)
 
 This library contains executors to ease automated releases with Nx and semantic release. The library
 provides the following executors:
