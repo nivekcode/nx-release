@@ -13,7 +13,7 @@ export async function configureLibraryGenerator(
   options: ConfigureLibraryGeneratorSchema
 ) {
   let {libName} = options;
-  const {libPath, updatePublishConfig} = options;
+  const { updatePublishConfig} = options;
   const spinner = ora();
 
   try {

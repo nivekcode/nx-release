@@ -12,14 +12,6 @@
         "index": 0
       }
     },
-    "libPath": {
-      "type": "string",
-      "description": "The path to the library you want to publish (will be combined with the library name)",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
-    },
     "updatePublishConfig": {
       "type": "boolean",
       "description": "Add config for public publishing of a library",
