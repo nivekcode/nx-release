@@ -12,7 +12,7 @@
         "index": 0
       }
     },
-    "updatePublishConfig": {
+    "publicPublishConfig": {
       "type": "boolean",
       "description": "Add config for public publishing of a library",
       "x-prompt": {

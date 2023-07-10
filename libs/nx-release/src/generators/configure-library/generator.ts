@@ -13,7 +13,7 @@ export async function configureLibraryGenerator(
   options: ConfigureLibraryGeneratorSchema
 ) {
   let {libName} = options;
-  const { updatePublishConfig} = options;
+  const { publicPublishConfig } = options;
   const spinner = ora();
 
   try {
@@ -50,7 +50,7 @@ export async function configureLibraryGenerator(
 
     spinner.succeed();
 
-    if (updatePublishConfig) {
+    if (publicPublishConfig) {
       spinner.text = '🐋 nx-release: add public publish config';
       spinner.start();
 

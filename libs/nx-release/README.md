@@ -1,12 +1,45 @@
 ![](./assets/nx-release-logo.svg)
 
-This library contains executors to ease automated releases with Nx and semantic release. The library
-provides the following executors:
+This library contains executors and generators 
 
-- npm-publish
-- update-version
+Your go-to open-source library for effortless semantic releases of NPM libraries within a monorepo. This repository provides generators and executors for a fully automated release setup that contains commit analyzation, automated versioning, changelog generation and publishing.
+
+The library provides generators and executors:
+
+- Generators
+- Executors
+
+# Generators
+
+The provided generators help you setup automated library releasing in an existing NX workspace. This process works for all kind of libraries since its framework agnostic. The following generators are provided:
+
+## configure-workspace
+
+The `configure-workspace` generator allows you to setup automated releases on a **workspace level only**. The generator can be executed with the following command:
+
+```npx nx-release:configure-workspace```
+
+The generator will then prompt the following options:
+
+| option                | description                                                  | default | prompted |
+| --------------------- | ------------------------------------------------------------ | ------- | -------- |
+| installDeps           | Should we install semantic-release and all the required plugins | true    | yes      |
+| generateReleaseConfig | Should we generate a semantic-release configuration at the root of your workspace | true    | yes      |
+| generateGhActions     | Should we generate GitHub actions for feature branches and releases | True    | yes      |
+
+## configure-library
+
+The `configure-library`generator sets up a library for semantic release. When setting up the library it will use some of the executors provided by `nx-release`.
+
+| option              | description                                          | default | prompted                            |
+| ------------------- | ---------------------------------------------------- | ------- | ----------------------------------- |
+| publicPublishConfig | Should we add public publish config for your library | true    | yes                                 |
+| libName             | The name of the library that should be configured    |         | only if nothing is passed initially |
+
+# Executors
 
 ## NPM publish
+
 As the name indicates the `npm-publish` generator can be used to publish a library to NPM. To 
 do so the executor expects a `NPM_TOKEN` to be present as a Node environment variable.
 

@@ -22,7 +22,7 @@
       },
       "default": true
     },
-    "generateWorkflows": {
+    "generateGhActions": {
       "type": "boolean",
       "description": "Generate GitHub workflow files (ci.yml & release.yml)",
       "x-prompt": {

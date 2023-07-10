@@ -1,4 +1,4 @@
 export interface ConfigureLibraryGeneratorSchema {
   libName?: string;
-  updatePublishConfig?: boolean;
+  publicPublishConfig?: boolean;
 }

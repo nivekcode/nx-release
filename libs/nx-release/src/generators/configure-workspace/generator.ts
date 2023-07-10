@@ -9,7 +9,7 @@ export async function configureWorkspaceGenerator(
   tree: Tree,
   options: ConfigureWorkspaceGeneratorSchema
 ) {
-  const {installDeps, generateReleaseConfig, generateWorkflows} = options;
+  const {installDeps, generateReleaseConfig, generateGhActions} = options;
 
   const spinner = ora();
   try {
@@ -21,8 +21,8 @@ export async function configureWorkspaceGenerator(
       spinner.succeed();
     }
 
-    if (generateReleaseConfig || generateWorkflows) {
-      const artifacts = getArtifacts(generateReleaseConfig, generateWorkflows);
+    if (generateReleaseConfig || generateGhActions) {
+      const artifacts = getArtifacts(generateReleaseConfig, generateGhActions);
       spinner.text = `🐋 nx-release: generating ${artifacts}`;
       spinner.start();
       generateFiles(tree, path.join(__dirname, 'files'), '.', options);
