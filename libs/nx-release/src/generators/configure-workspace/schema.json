@@ -31,6 +31,5 @@
       },
       "default": true
     }
-  },
-  "required": ["installDeps", "generateReleaseConfig", "generateWorkflows"]
+  }
 }
