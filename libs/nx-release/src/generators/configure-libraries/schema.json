@@ -4,15 +4,14 @@
   "title": "",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string",
-      "description": "",
-      "$default": {
-        "$source": "argv",
-        "index": 0
+    "publicPublishConfig": {
+      "type": "boolean",
+      "description": "Should we update the config for public publishing of a library",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: is your library publicly publishable"
       },
-      "x-prompt": "What name would you like to use?"
+      "default": true
     }
-  },
-  "required": ["name"]
+  }
 }

@@ -36,6 +36,15 @@ The `configure-library`generator sets up a library for semantic release. When se
 | publicPublishConfig | Should we add public publish config for your library | true    | yes                                 |
 | libName             | The name of the library that should be configured    |         | only if nothing is passed initially |
 
+## configure-libraries
+
+The `configure-libraries`generator sets up a multiple libraries for semantic release. When setting up the libraries it will use some of the executors provided by `nx-release`.
+
+| option              | description                                          | default | prompted                          |
+| ------------------- | ---------------------------------------------------- | ------- | --------------------------------- |
+| publicPublishConfig | Should we add public publish config for your library | true    | yes                               |
+| libName             | The name of the library that should be configured    |         | will be prompted during execution |
+
 # Executors
 
 ## NPM publish

@@ -1,3 +1,3 @@
 export interface ConfigureLibrariesGeneratorSchema {
-  name: string;
+  publicPublishConfig: boolean;
 }
