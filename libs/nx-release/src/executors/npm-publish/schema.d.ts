@@ -1,4 +1,1 @@
-export interface NpmPublishExecutorSchema {
-  libName: string;
-  libPath?: string;
-}
+export interface NpmPublishExecutorSchema {}

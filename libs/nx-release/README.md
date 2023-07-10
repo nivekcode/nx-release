@@ -9,9 +9,40 @@ The library provides generators and executors:
 - Generators
 - Executors
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Generators](#generators)
+  - [configure](#configure)
+  - [configure-workspace](#configure-workspace)
+  - [configure-library](#configure-library)
+  - [configure-libraries](#configure-libraries)
+- [Executors](#executors)
+  - [npm-publish](#npm-publish)
+  - [update-version](#update-version)
+  - [build-update-publish](#build-update-publish)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Generators
 
 The provided generators help you setup automated library releasing in an existing NX workspace. This process works for all kind of libraries since its framework agnostic. The following generators are provided:
+
+## configure
+
+The `configure` workspace generator allows you to setup the workspace plus the libraries of you choice. Internally this generator calls the `configure-workspace` as well as the `configure-libraries` generator. The generator can be invoked with the following command:
+
+```npx nx-release:configure```
+
+The generators provides the follwing options:
+
+| option                | description                                                  | default | prompted |
+| --------------------- | ------------------------------------------------------------ | ------- | -------- |
+| installDeps           | Should we install semantic-release and all the required plugins | true    | yes      |
+| generateReleaseConfig | Should we generate a semantic-release configuration at the root of your workspace | true    | yes      |
+| generateGhActions     | Should we generate GitHub actions for feature branches and releases | true    | yes      |
+| publicPublishConfig   | Should we add public publish config for your library         | true    | Yes      |
 
 ## configure-workspace
 
@@ -47,35 +78,16 @@ The `configure-libraries`generator sets up a multiple libraries for semantic rel
 
 # Executors
 
-## NPM publish
+## npm-publish
 
 As the name indicates the `npm-publish` generator can be used to publish a library to NPM. To 
-do so the executor expects a `NPM_TOKEN` to be present as a Node environment variable.
-
-The generator furthermore requires the following options:
-
-- **libName** the name of the library you want to publish. The executor will then automatically construct the path which points to dist/libs/${libName}
-
-Maybe you have a more sophisticated setup and therefore your library is in a different path. In such cases you can use the `libPath` property to configure the generator accordingly.
-
-- **libPath** (optional) for example 'dist/libs/my-domain'
+do so **the executor requires a `NPM_TOKEN` to be present as a Node environment variable**.
 
 
 ## update-version
-This executor updates the `package.json` version in the specified library. The executor **requires** the following config options:
-
-- **libName**: the name of the library. The path will be constructed in the following way: `libs/${libName}/package.json`
-
-if your library is in a different folder, you can always optionally specify the library path:
-
-- **libPath**: optional library path. for example: `libs/my-domain`
-
-**The update-version executor expects a VERSION env variable to be present**
+This executor updates the `package.json` version in the specified library. The executor **requires** the following config options.**The update-version executor expects a VERSION env variable to be present**.
 
 ## build-update-publish
-This executor combines the previous two executors and additionally performs a release. It also accepts the same options as the other ones:
+This executor combines the previous two executors and additionally performs a release.
 
-- **libName** (required): name of the library
-- **libPath** (optional): path of the library
-
-** This command expects a valid NPM token to be present as a `NPM_TOKEN` environment variable and the new release version to be present as a `VERSION` variable.
+**This command expects a valid NPM token to be present as a `NPM_TOKEN` environment variable and the new release version to be present as a `VERSION` variable**.

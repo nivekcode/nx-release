@@ -3,9 +3,10 @@
   "version": "2.1.0",
   "license": "MIT",
   "scripts": {
-    "g:configue-workspace": "nx generate @nx-release/nx-release:configure-workspace",
-    "g:configue-library": "nx generate @nx-release/nx-release:configure-library",
-    "g:configue-libraries": "nx generate @nx-release/nx-release:configure-libraries",
+    "g:configure": "nx generate @nx-release/nx-release:configure",
+    "g:configure-workspace": "nx generate @nx-release/nx-release:configure-workspace",
+    "g:configure-library": "nx generate @nx-release/nx-release:configure-library",
+    "g:configure-libraries": "nx generate @nx-release/nx-release:configure-libraries",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
