@@ -1,0 +1,44 @@
+{
+  "name": "sample-lib-baz",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sample-lib/baz/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sample-lib/baz",
+        "main": "libs/sample-lib/baz/src/index.ts",
+        "tsConfig": "libs/sample-lib/baz/tsconfig.lib.json",
+        "assets": ["libs/sample-lib/baz/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs sample-lib-baz {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sample-lib/baz/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/sample-lib/baz/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
