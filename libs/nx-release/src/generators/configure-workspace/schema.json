@@ -4,15 +4,20 @@
   "title": "",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string",
-      "description": "",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      },
-      "x-prompt": "What name would you like to use?"
+    "installDeps": {
+      "type": "boolean",
+      "description": "\uD83D\uDC0B nx-release: would you like to install semantic-release and the required plugins?",
+      "default": "true"
+    },
+    "generateReleaseConfig": {
+      "type": "boolean",
+      "description": "\uD83D\uDC0B nx-release: would you like to generate a release config",
+      "default": "true"
+    },
+    "generateWorkflows": {
+      "type": "boolean",
+      "description": "\uD83D\uDC0B nx-release: would you like to generate GitHub workflows?",
+      "default": "true"
     }
-  },
-  "required": ["name"]
+  }
 }

@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "license": "MIT",
   "scripts": {
+    "g:configuer-workspace": "nx generate @nx-release/nx-release:configure-workspace",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
@@ -14,9 +15,8 @@
     "@nx/devkit": "16.5.0",
     "@nx/plugin": "^16.5.0",
     "@swc/helpers": "~0.5.0",
-    "chalk": "^5.3.0",
-    "ora": "^6.3.1",
-    "replace-json-property": "^1.9.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -44,7 +44,9 @@
     "jest-environment-jsdom": "^29.4.1",
     "nx": "16.5.0",
     "nx-cloud": "latest",
+    "nx-release": "^2.1.0",
     "prettier": "^2.6.2",
+    "replace-json-property": "^1.9.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.1.3"

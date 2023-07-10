@@ -1,3 +1,5 @@
 export interface ConfigureWorkspaceGeneratorSchema {
-  name: string;
+  installDeps?: boolean;
+  generateReleaseConfig?: boolean;
+  generateWorkflows?: boolean;
 }
