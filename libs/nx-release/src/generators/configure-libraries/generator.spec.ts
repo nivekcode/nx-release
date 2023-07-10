@@ -1,20 +1,34 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nx/devkit';
+import { Tree } from '@nx/devkit';
+
+import * as projectHelpers from '../helpers/projects.helpers';
+import * as spinnerHelper from "../helpers/spinner.helper";
 
 import { configureLibrariesGenerator } from './generator';
-import { ConfigureLibrariesGeneratorSchema } from './schema';
+import * as process from "process";
+
 
 describe('configure-libraries generator', () => {
   let tree: Tree;
-  const options: ConfigureLibrariesGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
+    jest.spyOn(spinnerHelper, 'getSpinner').mockReturnValue(({
+        start: jest.fn(),
+        succeed: jest.fn(),
+      }) as any
+    );
   });
 
-  it('should run successfully', async () => {
-    await configureLibrariesGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
+  it('should log an error message if no library projects are found', done => {
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([]);
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(process, 'exit').mockImplementation((() => {
+      done();
+    }) as any);
+
+    configureLibrariesGenerator(tree, {} as any);
   });
 });

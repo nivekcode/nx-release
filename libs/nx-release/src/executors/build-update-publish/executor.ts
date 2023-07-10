@@ -1,8 +1,8 @@
 import {ExecutorContext} from "@nx/devkit";
 import {execSync} from "child_process";
 
+import {getProjectName} from '../helpers/projects.helpers';
 import updateVersion from '../update-version/executor';
-import {getProjectName} from '../helpers/project';
 import npmPublish from '../npm-publish/executor';
 
 import {BuildUpdatePublishExecutorSchema} from './schema';

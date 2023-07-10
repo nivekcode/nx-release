@@ -1,7 +1,7 @@
 import {formatFiles, Tree,} from '@nx/devkit';
 
-import configureWorkspaceGenerator from "../configure-workspace/generator";
-import configureLibrariesGenerator from "../configure-libraries/generator";
+import {configureWorkspaceGenerator} from "../configure-workspace/generator";
+import {configureLibrariesGenerator} from "../configure-libraries/generator";
 
 import {ConfigureGeneratorSchema} from './schema';
 

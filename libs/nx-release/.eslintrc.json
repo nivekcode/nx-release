@@ -7,6 +7,12 @@
       "rules": {}
     },
     {
+      "files": ["*.d.ts"],
+      "rules": {
+        "@typescript-eslint/no-empty-interface": "off"
+      }
+    },
+    {
       "files": ["*.ts", "*.tsx"],
       "rules": {}
     },

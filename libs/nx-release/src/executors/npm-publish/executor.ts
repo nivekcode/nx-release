@@ -1,7 +1,9 @@
-import {NpmPublishExecutorSchema} from './schema';
 import {execSync} from 'child_process';
-import {getRoot} from "../helpers/project";
 import {ExecutorContext} from "@nx/devkit";
+
+import {getRoot} from "../helpers/projects.helpers";
+
+import {NpmPublishExecutorSchema} from './schema';
 
 export default async function runExecutor(options: NpmPublishExecutorSchema,
                                           context: ExecutorContext

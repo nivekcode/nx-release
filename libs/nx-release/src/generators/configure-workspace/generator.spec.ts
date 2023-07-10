@@ -1,20 +1,51 @@
-import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nx/devkit';
+import {createTreeWithEmptyWorkspace} from '@nx/devkit/testing';
+import {Tree} from '@nx/devkit';
 
-import { configureWorkspaceGenerator } from './generator';
-import { ConfigureWorkspaceGeneratorSchema } from './schema';
+import * as childProcess from 'child_process';
+import * as nXdevKit from '@nx/devkit';
+import * as spinnerHelper from '../helpers/spinner.helper';
+
+import {configureWorkspaceGenerator} from './generator';
 
 describe('configure-workspace generator', () => {
   let tree: Tree;
-  const options: ConfigureWorkspaceGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
+    jest.spyOn(spinnerHelper, 'getSpinner').mockReturnValue(({
+        start: jest.fn(),
+        succeed: jest.fn(),
+      }) as any
+    );
   });
 
-  it('should run successfully', async () => {
+  it('should install the dependencies if the "installDeps" flag is set', async () => {
+    const options = {
+      installDeps: true
+    };
+
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(childProcess, 'execSync').mockImplementation((() => {
+    }) as any);
+
     await configureWorkspaceGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
+    expect(childProcess.execSync).toHaveBeenCalledWith(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property`);
+  });
+
+  it('should generate the release config if the "generateReleaseConfig" flag is set', async () => {
+    const options = {
+      generateReleaseConfig: true
+    };
+
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(childProcess, 'execSync').mockImplementation((() => {
+    }) as any);
+
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(nXdevKit, 'generateFiles').mockImplementation((() => {
+    }) as any);
+
+    await configureWorkspaceGenerator(tree, options);
+    expect(nXdevKit.generateFiles).toHaveBeenCalled();
   });
 });

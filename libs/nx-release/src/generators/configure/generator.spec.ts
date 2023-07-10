@@ -1,20 +1,43 @@
-import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nx/devkit';
+import {createTreeWithEmptyWorkspace} from '@nx/devkit/testing';
+import {Tree} from '@nx/devkit';
 
-import { configureGenerator } from './generator';
-import { ConfigureGeneratorSchema } from './schema';
+import * as workspaceGenerator from "../configure-workspace/generator";
+import * as libraryGenerator from "../configure-libraries/generator";
+
+import {configureGenerator} from './generator';
 
 describe('configure generator', () => {
   let tree: Tree;
-  const options: ConfigureGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
   });
 
   it('should run successfully', async () => {
+
+    const options = {
+      installDeps: true,
+      generateGhActions: true,
+      generateReleaseConfig: true,
+      publicPublishConfig: true
+    }
+
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(workspaceGenerator, 'configureWorkspaceGenerator').mockImplementation(() => Promise.resolve());
+
+    // eslint disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(libraryGenerator, 'configureLibrariesGenerator').mockImplementation(() => Promise.resolve());
+
     await configureGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
+
+    expect(workspaceGenerator.configureWorkspaceGenerator).toHaveBeenCalledWith(tree, {
+      installDeps: options.installDeps,
+      generateGhActions: options.generateGhActions,
+      generateReleaseConfig: options.generateReleaseConfig
+    });
+
+    expect(libraryGenerator.configureLibrariesGenerator).toHaveBeenCalledWith(tree, {
+      publicPublishConfig: options.publicPublishConfig
+    });
   });
 });

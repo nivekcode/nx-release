@@ -4,7 +4,8 @@ import * as inquirer from 'inquirer';
 import * as chalk from "chalk";
 import * as ora from 'ora';
 
-import {getLibraryProjectNames, getLibraryRoot} from "../helpers/projects";
+import {getLibraryProjectNames, getLibraryRoot} from "../helpers/projects.helpers";
+import {getSpinner} from "../helpers/spinner.helper";
 
 import {ConfigureLibraryGeneratorSchema} from './schema';
 
@@ -14,14 +15,14 @@ export async function configureLibraryGenerator(
 ) {
   let {libName} = options;
   const { publicPublishConfig } = options;
-  const spinner = ora();
+  const spinner = getSpinner();
 
   try {
     if (!libName) {
       const libraryProjects = getLibraryProjectNames(tree);
 
       if (libraryProjects.length === 0) {
-        console.log(chalk.blue(`🐋 nx-release: no library projects found in your workspace -> aborting`));
+        console.log(chalk.red(`🐋 nx-release: no library projects found in your workspace -> aborting`));
         process.exit(0);
       }
 

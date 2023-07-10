@@ -1,17 +1,17 @@
-import * as ora from "ora";
-import * as path from 'path';
-import {execSync} from "child_process";
-import {formatFiles, generateFiles, Tree,} from '@nx/devkit';
+  import * as path from 'path';
+  import {execSync} from "child_process";
+  import {formatFiles, generateFiles, Tree,} from '@nx/devkit';
 
-import {ConfigureWorkspaceGeneratorSchema} from './schema';
+  import {getSpinner} from "../helpers/spinner.helper";
 
-export async function configureWorkspaceGenerator(
-  tree: Tree,
-  options: ConfigureWorkspaceGeneratorSchema
-) {
-  const {installDeps, generateReleaseConfig, generateGhActions} = options;
+  import {ConfigureWorkspaceGeneratorSchema} from './schema';
 
-  const spinner = ora();
+  export async function configureWorkspaceGenerator(
+    tree: Tree,
+    options: ConfigureWorkspaceGeneratorSchema
+  ) {
+    const {installDeps, generateReleaseConfig, generateGhActions} = options;
+    const spinner = getSpinner();
   try {
 
     if (installDeps) {
@@ -22,6 +22,7 @@ export async function configureWorkspaceGenerator(
     }
 
     if (generateReleaseConfig || generateGhActions) {
+      // TODO will this also generate the release config if generateGhActions is set to true?
       const artifacts = getArtifacts(generateReleaseConfig, generateGhActions);
       spinner.text = `🐋 nx-release: generating ${artifacts}`;
       spinner.start();
