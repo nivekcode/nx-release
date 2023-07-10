@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ConfigureLibrary",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "libName": {
+      "type": "string",
+      "description": "The name of the library you want to publish",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "libPath": {
+      "type": "string",
+      "description": "The path to the library you want to publish (will be combined with the library name)",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "updatePublishConfig": {
+      "type": "boolean",
+      "description": "Add config for public publishing of a library",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: is your library publicly publishable"
+      },
+      "default": true
+    }
+  }
+}

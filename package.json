@@ -3,7 +3,8 @@
   "version": "2.1.0",
   "license": "MIT",
   "scripts": {
-    "g:configuer-workspace": "nx generate @nx-release/nx-release:configure-workspace",
+    "g:configue-workspace": "nx generate @nx-release/nx-release:configure-workspace",
+    "g:configue-library": "nx generate @nx-release/nx-release:configure-library",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
@@ -40,6 +41,7 @@
     "conventional-changelog-conventionalcommits": "^6.1.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
+    "inquirer": "^8.2.5",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "nx": "16.5.0",

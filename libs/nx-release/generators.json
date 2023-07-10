@@ -4,6 +4,11 @@
       "factory": "./src/generators/configure-workspace/generator",
       "schema": "./src/generators/configure-workspace/schema.json",
       "description": "configure-workspace generator"
+    },
+    "configure-library": {
+      "factory": "./src/generators/configure-library/generator",
+      "schema": "./src/generators/configure-library/schema.json",
+      "description": "configure-library generator"
     }
   }
 }
