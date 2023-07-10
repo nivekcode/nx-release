@@ -33,7 +33,7 @@ export async function configureLibraryGenerator(
       libName = projectPrompt.selectedProject;
     }
 
-    spinner.text = '🐋 nx-release: configuring executor';
+    spinner.text = `🐋 nx-release: configuring executor for library ${libName}`;
     spinner.start();
 
     const libraryRoot = getLibraryRoot(tree, libName);
@@ -51,7 +51,7 @@ export async function configureLibraryGenerator(
     spinner.succeed();
 
     if (publicPublishConfig) {
-      spinner.text = '🐋 nx-release: add public publish config';
+      spinner.text = `🐋 nx-release: add public publish config for library ${libName}`;
       spinner.start();
 
       updateJson(tree, `${libraryRoot}/package.json`, (packageJson: any) => {

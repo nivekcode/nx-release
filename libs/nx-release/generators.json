@@ -9,6 +9,11 @@
       "factory": "./src/generators/configure-library/generator",
       "schema": "./src/generators/configure-library/schema.json",
       "description": "configure-library generator"
+    },
+    "configure-libraries": {
+      "factory": "./src/generators/configure-libraries/generator",
+      "schema": "./src/generators/configure-libraries/schema.json",
+      "description": "configure-libraries generator"
     }
   }
 }

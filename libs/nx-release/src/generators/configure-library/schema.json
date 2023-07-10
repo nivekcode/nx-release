@@ -4,22 +4,5 @@
   "title": "",
   "type": "object",
   "properties": {
-    "libName": {
-      "type": "string",
-      "description": "The name of the library you want to publish",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
-    },
-    "publicPublishConfig": {
-      "type": "boolean",
-      "description": "Add config for public publishing of a library",
-      "x-prompt": {
-        "type": "boolean",
-        "message": "\uD83D\uDC0B nx-release: is your library publicly publishable"
-      },
-      "default": true
-    }
   }
 }
