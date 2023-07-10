@@ -6,18 +6,31 @@
   "properties": {
     "installDeps": {
       "type": "boolean",
-      "description": "\uD83D\uDC0B nx-release: would you like to install semantic-release and the required plugins?",
-      "default": "true"
+      "description": "Install semantic-release and dependencies",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: would you like to install semantic-release and the required plugins?"
+      },
+      "default": true
     },
     "generateReleaseConfig": {
       "type": "boolean",
-      "description": "\uD83D\uDC0B nx-release: would you like to generate a release config",
-      "default": "true"
+      "description": "Generate release.config.js file",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: would you like to generate a release config"
+      },
+      "default": true
     },
     "generateWorkflows": {
       "type": "boolean",
-      "description": "\uD83D\uDC0B nx-release: would you like to generate GitHub workflows?",
-      "default": "true"
+      "description": "Generate GitHub workflow files (ci.yml & release.yml)",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: would you like to generate GitHub workflows?"
+      },
+      "default": true
     }
-  }
+  },
+  "required": ["installDeps", "generateReleaseConfig", "generateWorkflows"]
 }
