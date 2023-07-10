@@ -4,7 +4,7 @@ import * as inquirer from 'inquirer';
 import * as chalk from "chalk";
 import * as ora from 'ora';
 
-import {getLibraryProjectNames} from "../helpers/projects";
+import {getLibraryProjectNames, getLibrarySourceRoot} from "../helpers/projects";
 
 import {ConfigureLibraryGeneratorSchema} from './schema';
 
@@ -14,7 +14,6 @@ export async function configureLibraryGenerator(
 ) {
   let {libName} = options;
   const {libPath, updatePublishConfig} = options;
-  const projectRoot = !libPath ? `libs/${libName}` : `${libPath}/${libName}`;
   const spinner = ora();
 
   try {
@@ -37,7 +36,7 @@ export async function configureLibraryGenerator(
     spinner.text = '🐋 nx-release: configuring executor';
     spinner.start();
 
-    updateJson(tree, `${projectRoot}/project.json`, (packageJson: any) => {
+    updateJson(tree, `${getLibrarySourceRoot(tree, libName)}/project.json`, (packageJson: any) => {
       packageJson.targets.release = {
         executor: 'nx-release:build-update-publish',
         options: {
