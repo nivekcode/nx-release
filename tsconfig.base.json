@@ -15,10 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-release/nx-release": ["libs/nx-release/src/index.ts"],
-      "test-lib-bar": ["libs/test-lib/bar/src/index.ts"],
-      "test-lib-baz": ["libs/test-lib/baz/src/index.ts"],
-      "test-lib-foo": ["libs/test-lib/foo/src/index.ts"]
+      "@nx-release/nx-release": ["libs/nx-release/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

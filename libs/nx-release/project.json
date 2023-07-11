@@ -67,6 +67,12 @@
       "options": {
         "command": "cd ./dist/libs/nx-release && echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc && npm publish"
       }
+    },
+    "release": {
+      "executor": "nx-release:build-update-publish",
+      "options": {
+        "libName": "nx-release"
+      }
     }
   },
   "tags": []
