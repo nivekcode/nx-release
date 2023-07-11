@@ -11,7 +11,7 @@ export async function generateGhActionsGenerator(
 ) {
   const spinner = getSpinner();
   try {
-    spinner.text = `🐋 nx-release: generating a release config`;
+    spinner.text = `🐋 nx-release: generating GitHub actions workflow files`;
     spinner.start();
     generateFiles(tree, path.join(__dirname, 'files'), '.', options);
     spinner.succeed();
