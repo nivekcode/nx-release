@@ -2,7 +2,7 @@ import {formatFiles, Tree,} from '@nx/devkit';
 import * as inquirer from 'inquirer';
 
 import {getLibraryProjectNames} from "../helpers/projects.helpers";
-import configureLibraryGenerator from "../configure-library/generator";
+import {configureLibraryGenerator} from "../configure-library/generator";
 
 import {ConfigureLibrariesGeneratorSchema} from './schema';
 import * as chalk from "chalk";

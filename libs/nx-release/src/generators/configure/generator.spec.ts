@@ -13,7 +13,7 @@ describe('configure generator', () => {
     tree = createTreeWithEmptyWorkspace();
   });
 
-  it('should run successfully', async () => {
+  it('should call the workspace and the library generator', async () => {
 
     const options = {
       installDeps: true,

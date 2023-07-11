@@ -1,8 +1,7 @@
 import {formatFiles, Tree, updateJson} from '@nx/devkit';
-import * as process from "process";
 import * as inquirer from 'inquirer';
+import * as process from "process";
 import * as chalk from "chalk";
-import * as ora from 'ora';
 
 import {getLibraryProjectNames, getLibraryRoot} from "../helpers/projects.helpers";
 import {getSpinner} from "../helpers/spinner.helper";
