@@ -1,3 +1,16 @@
+## [3.1.0](https://github.com/kreuzerk/nx-release/compare/v3.0.0...v3.1.0) (2023-07-11)
+
+
+### Features
+
+* 🎸 select all option on libraries configurator ([22a3208](https://github.com/kreuzerk/nx-release/commit/22a320857e423a95ec361dbf793cb2a6c4391f16))
+
+
+### Chores
+
+* 🤖 add test libs ([0e29dd2](https://github.com/kreuzerk/nx-release/commit/0e29dd2abde2a32763fbb94cc1f53dc40b123d4b))
+* 🤖 remove release target from nx-release project.json ([c68b49e](https://github.com/kreuzerk/nx-release/commit/c68b49eb2d909305162bd1f736a57faf84d84fdb))
+
 ## [3.0.0](https://github.com/kreuzerk/nx-release/compare/v2.1.0...v3.0.0) (2023-07-11)
 
 

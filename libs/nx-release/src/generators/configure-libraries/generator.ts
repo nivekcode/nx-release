@@ -22,10 +22,11 @@ export async function configureLibrariesGenerator(
   const projectsPrompt = await inquirer.prompt({
     type: 'checkbox',
     name: 'selectedProjects',
-    choices: libraryProjects
+    choices: ['all', ...libraryProjects]
   });
 
-  const selectedProjects = projectsPrompt.selectedProjects;
+  const selectedProjects = projectsPrompt.selectedProjects.includes('all')
+  ? libraryProjects: projectsPrompt.selectedProjects;
 
   for (const libName of selectedProjects) {
     await configureLibraryGenerator(tree, {libName, publicPublishConfig});
