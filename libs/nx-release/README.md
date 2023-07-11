@@ -1,6 +1,7 @@
 ![](./assets/nx-release-logo.svg)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)[![Coverage Status](https://coveralls.io/repos/github/kreuzerk/nx-release/badge.svg?branch=feature/generators)](https://coveralls.io/github/kreuzerk/nx-release?branch=feature/generators)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This library contains executors and generators 
