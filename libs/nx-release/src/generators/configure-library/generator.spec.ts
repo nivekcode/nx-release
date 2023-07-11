@@ -24,10 +24,7 @@ describe('configure-library generator', () => {
   it('should prompt for project if no library name was provided', async () => {
     const mockProjectNames = ['foo', 'bar'];
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({name: 'test'}));
-
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue(mockProjectNames);
 
     await configureLibraryGenerator(tree, {});
@@ -48,7 +45,6 @@ describe('configure-library generator', () => {
       }
     };
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({selectedProject: libName}));
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([libName]);
     jest.spyOn(projectHelpers, 'getLibraryRoot').mockReturnValue(`${libName}`);
@@ -63,7 +59,6 @@ describe('configure-library generator', () => {
   it('should not add a public publish config if the "publicPublishConfig" was not set', async () => {
     const libName = 'foo';
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({selectedProject: libName}));
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([libName]);
     jest.spyOn(projectHelpers, 'getLibraryRoot').mockReturnValue(`${libName}`);
@@ -79,7 +74,6 @@ describe('configure-library generator', () => {
     const libName = 'foo';
     const expectedPublishConfig = {access: 'public'}
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({selectedProject: libName}));
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([libName]);
     jest.spyOn(projectHelpers, 'getLibraryRoot').mockReturnValue(`${libName}`);

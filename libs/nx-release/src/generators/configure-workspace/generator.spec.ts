@@ -24,7 +24,6 @@ describe('configure-workspace generator', () => {
       installDeps: true
     };
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(childProcess, 'execSync').mockImplementation((() => {
     }) as any);
 
@@ -37,11 +36,8 @@ describe('configure-workspace generator', () => {
       generateReleaseConfig: true
     };
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(childProcess, 'execSync').mockImplementation((() => {
     }) as any);
-
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(nXdevKit, 'generateFiles').mockImplementation((() => {
     }) as any);
 

@@ -23,14 +23,11 @@ describe('configure-libraries generator', () => {
   });
 
   it('should log an error message if no library projects are found', done => {
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([]);
     jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({
       selectedProjects: []
     }));
-
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(process, 'exit').mockImplementation((() => {
       done();
     }) as any);

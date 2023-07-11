@@ -22,10 +22,7 @@ describe('configure generator', () => {
       publicPublishConfig: true
     }
 
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(workspaceGenerator, 'configureWorkspaceGenerator').mockImplementation(() => Promise.resolve());
-
-    // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(libraryGenerator, 'configureLibrariesGenerator').mockImplementation(() => Promise.resolve());
 
     await configureGenerator(tree, options);
