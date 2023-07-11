@@ -1,18 +1,17 @@
-import { ReplaceVersionExecutorSchema } from './schema';
+import type {ExecutorContext} from '@nx/devkit';
 import {replace} from 'replace-json-property';
 import * as process from "process";
 
+import {getRoot} from "../helpers/projects.helpers";
+
+import {ReplaceVersionExecutorSchema} from './schema';
+
 export default async function runExecutor(
-  options: ReplaceVersionExecutorSchema
+  options: ReplaceVersionExecutorSchema,
+  context: ExecutorContext
 ) {
-  const {libName, libPath} = options;
-
-  const packageJsonPath = libPath ?
-    `${libPath}/${libName}/package.json` :
-    `libs/${libName}/package.json`
-
-  replace(packageJsonPath, 'version', process.env.VERSION);
-
+  const sourceRoot = getRoot(context);
+  replace(`${sourceRoot}/package.json`, 'version', process.env.VERSION);
   return {
     success: true,
   };

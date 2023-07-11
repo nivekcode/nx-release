@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ConfigureLibrary",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "publicPublishConfig": {
+      "type": "boolean",
+      "description": "Should we update the config for public publishing of a library",
+      "x-prompt": {
+        "type": "boolean",
+        "message": "\uD83D\uDC0B nx-release: is your library publicly publishable"
+      },
+      "default": true
+    }
+  }
+}

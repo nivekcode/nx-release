@@ -1,26 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "version": 2,
-  "title": "ReplaceVersion executor",
+  "title": "Update version executor",
   "description": "",
   "type": "object",
-  "properties": {
-    "libName": {
-      "type": "string",
-      "description": "The name of the library you want to publish",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
-    },
-    "libPath": {
-      "type": "string",
-      "description": "The path to the library you want to publish (will be combined with the library name)",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
-    }
-  },
-  "required": ["libName"]
+  "properties": {}
 }

@@ -1,17 +1,17 @@
-import { NpmPublishExecutorSchema } from './schema';
-import { execSync } from 'child_process';
+import {execSync} from 'child_process';
+import {ExecutorContext} from "@nx/devkit";
 
-export default async function runExecutor(options: NpmPublishExecutorSchema) {
-  const { libName, libPath } = options;
+import {getRoot} from "../helpers/projects.helpers";
 
-  const directory = libPath
-    ? `${libPath}/${libName}`
-    : `./dist/libs/${libName}`;
+import {NpmPublishExecutorSchema} from './schema';
 
+export default async function runExecutor(options: NpmPublishExecutorSchema,
+                                          context: ExecutorContext
+) {
+  const sourceRoot = `./dist/${getRoot(context)}`;
   execSync(
-    `cd ${directory} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
+    `cd ${sourceRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
   );
-
   return {
     success: true,
   };

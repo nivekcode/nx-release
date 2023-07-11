@@ -1,4 +1,1 @@
-export interface BuildUpdatePublishExecutorSchema {
-  libName: string;
-  libPath?: string;
-}
+export interface BuildUpdatePublishExecutorSchema {}
