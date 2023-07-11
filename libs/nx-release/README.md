@@ -21,10 +21,13 @@ The library provides generators and executors:
   - [configure-workspace](#configure-workspace)
   - [configure-library](#configure-library)
   - [configure-libraries](#configure-libraries)
+  - [generate-gh-actions](#generate-gh-actions)
+  - [generate-release-config](#generate-release-config)
 - [Executors](#executors)
   - [npm-publish](#npm-publish)
   - [update-version](#update-version)
   - [build-update-publish](#build-update-publish)
+  - [Contributors ✨](#contributors-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -49,11 +52,9 @@ The generators provides the follwing options:
 
 ## configure-workspace
 
-The `configure-workspace` generator allows you to setup automated releases on a **workspace level only**. The generator can be executed with the following command:
-
 ```npx nx-release:configure-workspace```
 
-The generator will then prompt the following options:
+The `configure-workspace` generator allows you to setup automated releases on a **workspace level only**. The generator will then prompt the following options:
 
 | option                | description                                                  | default | prompted |
 | --------------------- | ------------------------------------------------------------ | ------- | -------- |
@@ -62,6 +63,8 @@ The generator will then prompt the following options:
 | generateGhActions     | Should we generate GitHub actions for feature branches and releases | True    | yes      |
 
 ## configure-library
+
+```npx nx-release:configure-library```
 
 The `configure-library`generator sets up a library for semantic release. When setting up the library it will use some of the executors provided by `nx-release`.
 
@@ -72,12 +75,29 @@ The `configure-library`generator sets up a library for semantic release. When se
 
 ## configure-libraries
 
+```npx nx-release:configure-libraries```
+
 The `configure-libraries`generator sets up a multiple libraries for semantic release. When setting up the libraries it will use some of the executors provided by `nx-release`.
 
 | option              | description                                          | default | prompted                          |
 | ------------------- | ---------------------------------------------------- | ------- | --------------------------------- |
 | publicPublishConfig | Should we add public publish config for your library | true    | yes                               |
 | libName             | The name of the library that should be configured    |         | will be prompted during execution |
+
+## generate-gh-actions
+
+```npx nx-release:generate-gh-actions```
+
+This generator can be used to generate two workflow files for automated releasing. This generator will generate the following two files:
+
+- ci.yml (this file configures a pipeline that is run on Pull request)
+- release.yml (file that releases the library / by default it has to be triggered manually)
+
+## generate-release-config
+
+```npx nx-release:generate-release-config```
+
+This generator generates a `release.config.js` file at the root of your project.
 
 # Executors
 
