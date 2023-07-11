@@ -26,6 +26,10 @@ describe('configure-libraries generator', () => {
     // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
     jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([]);
+    jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({
+      selectedProjects: []
+    }));
+
     // eslint disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(process, 'exit').mockImplementation((() => {
       done();

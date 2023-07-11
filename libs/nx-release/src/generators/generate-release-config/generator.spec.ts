@@ -2,6 +2,8 @@ import {createTreeWithEmptyWorkspace} from '@nx/devkit/testing';
 import * as nxDevkit from '@nx/devkit';
 import {Tree} from '@nx/devkit';
 
+import * as spinnerHelper from "../helpers/spinner.helper";
+
 import {generateReleaseConfigGenerator} from './generator';
 import {GenerateReleaseConfigGeneratorSchema} from './schema';
 
@@ -11,6 +13,12 @@ describe('generate-release-config generator', () => {
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
+    jest.spyOn(spinnerHelper, 'getSpinner').mockReturnValue(({
+        start: jest.fn(),
+        succeed: jest.fn(),
+        fail: jest.fn(),
+      }) as any
+    );
   });
 
   it('should generate the release config', async () => {
