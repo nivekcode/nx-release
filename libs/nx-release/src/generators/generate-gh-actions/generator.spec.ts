@@ -2,9 +2,10 @@ import {createTreeWithEmptyWorkspace} from '@nx/devkit/testing';
 import * as nxDevkit from '@nx/devkit';
 import {Tree} from '@nx/devkit';
 
-import {GenerateGhActionsGeneratorSchema} from './schema';
-import generateReleaseConfigGenerator from "../generate-release-config/generator";
 import * as spinnerHelper from "../helpers/spinner.helper";
+
+import {GenerateGhActionsGeneratorSchema} from './schema';
+import generateGhActionsGenerator from "./generator";
 
 describe('generate-gh-actions generator', () => {
   let tree: Tree;
@@ -23,7 +24,7 @@ describe('generate-gh-actions generator', () => {
   it('should generate the GitHub actions', async () => {
     jest.spyOn(nxDevkit, 'generateFiles').mockImplementation(() => {});
 
-    await generateReleaseConfigGenerator(tree, options);
+    await generateGhActionsGenerator(tree, options);
     expect(nxDevkit.generateFiles).toHaveBeenCalled();
   });
 });

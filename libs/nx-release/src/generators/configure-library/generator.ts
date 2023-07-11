@@ -21,7 +21,7 @@ export async function configureLibraryGenerator(
       const libraryProjects = getLibraryProjectNames(tree);
 
       if (libraryProjects.length === 0) {
-        console.log(chalk.red(`🐋 nx-release: no library projects found in your workspace -> aborting`));
+        console.error(chalk.red(`🐋 nx-release: no library projects found in your workspace -> aborting`));
         process.exit(0);
       }
 

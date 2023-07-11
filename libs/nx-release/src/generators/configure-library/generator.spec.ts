@@ -84,4 +84,17 @@ describe('configure-library generator', () => {
     const packageJson = readJson(tree, `${libName}/package.json`)
     expect(packageJson.publishConfig).toEqual(expectedPublishConfig);
   });
+
+  it('should log an error message if no library projects are found', done => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(projectHelpers, 'getLibraryProjectNames').mockReturnValue([]);
+    jest.spyOn(inquirer, 'prompt').mockImplementation(() => Promise.resolve({
+      selectedProjects: []
+    }));
+    jest.spyOn(process, 'exit').mockImplementation((() => {
+      done();
+    }) as any);
+
+    configureLibraryGenerator(tree, {} as any);
+  });
 });
