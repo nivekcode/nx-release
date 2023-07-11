@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/kreuzerk/nx-release/compare/v3.1.2...v3.1.3) (2023-07-11)
+
+
+### Bug Fixes
+
+* 🐛 remove the all selection option ([2fc13d0](https://github.com/kreuzerk/nx-release/commit/2fc13d00bb43ec5f7378a002af6c6bc3f3965f6f))
+
 ## [3.1.2](https://github.com/kreuzerk/nx-release/compare/v3.1.1...v3.1.2) (2023-07-11)
 
 
