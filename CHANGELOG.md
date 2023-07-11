@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/kreuzerk/nx-release/compare/v3.1.1...v3.1.2) (2023-07-11)
+
+
+### Bug Fixes
+
+* 🐛 generate files before installing ([928237f](https://github.com/kreuzerk/nx-release/commit/928237fab4d8b2771dc0918fbb351cccb5209641))
+
 ## [3.1.1](https://github.com/kreuzerk/nx-release/compare/v3.1.0...v3.1.1) (2023-07-11)
 
 
