@@ -40,7 +40,7 @@ The provided generators help you setup automated library releasing in an existin
 
 The `configure` workspace generator allows you to setup the workspace plus the libraries of you choice. Internally this generator calls the `configure-workspace` as well as the `configure-libraries` generator. The generator can be invoked with the following command:
 
-```npx nx-release:configure```
+```npx nx g nx-release:configure```
 
 The generators provides the follwing options:
 
@@ -53,7 +53,7 @@ The generators provides the follwing options:
 
 ## configure-workspace
 
-```npx nx-release:configure-workspace```
+```npx nx g nx-release:configure-workspace```
 
 The `configure-workspace` generator allows you to setup automated releases on a **workspace level only**. The generator will then prompt the following options:
 
@@ -65,7 +65,7 @@ The `configure-workspace` generator allows you to setup automated releases on a 
 
 ## configure-library
 
-```npx nx-release:configure-library```
+```npx nx g nx-release:configure-library```
 
 The `configure-library`generator sets up a library for semantic release. When setting up the library it will use some of the executors provided by `nx-release`.
 
@@ -76,7 +76,7 @@ The `configure-library`generator sets up a library for semantic release. When se
 
 ## configure-libraries
 
-```npx nx-release:configure-libraries```
+```npx nx g nx-release:configure-libraries```
 
 The `configure-libraries`generator sets up a multiple libraries for semantic release. When setting up the libraries it will use some of the executors provided by `nx-release`.
 
@@ -87,7 +87,7 @@ The `configure-libraries`generator sets up a multiple libraries for semantic rel
 
 ## generate-gh-actions
 
-```npx nx-release:generate-gh-actions```
+```npx nx g nx-release:generate-gh-actions```
 
 This generator can be used to generate two workflow files for automated releasing. This generator will generate the following two files:
 
@@ -96,7 +96,7 @@ This generator can be used to generate two workflow files for automated releasin
 
 ## generate-release-config
 
-```npx nx-release:generate-release-config```
+```npx nx g nx-release:generate-release-config```
 
 This generator generates a `release.config.js` file at the root of your project.
 
