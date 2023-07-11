@@ -14,20 +14,19 @@ export async function configureWorkspaceGenerator(
     const {installDeps, generateReleaseConfig, generateGhActions} = options;
     const spinner = getSpinner();
   try {
-
-    if (installDeps) {
-      spinner.text = '🐋 nx-release: Installing dependencies';
-      spinner.start();
-      execSync(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property`);
-      spinner.succeed();
-    }
-
     if (generateReleaseConfig) {
       await generateReleaseConfigGenerator(tree, {});
     }
 
     if (generateGhActions) {
       await generateGhActionsGenerator(tree, {});
+    }
+
+    if (installDeps) {
+      spinner.text = '🐋 nx-release: Installing dependencies';
+      spinner.start();
+      execSync(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property --force`);
+      spinner.succeed();
     }
 
     await formatFiles(tree);
