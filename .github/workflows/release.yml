@@ -13,7 +13,9 @@ jobs:
       - name: Lint
         run: npx nx run-many -t lint
       - name: Test
-        run: npx nx run-many -t test --configuration=ci
+        run: npm run test:coverage
+      - name: Report coverage
+        uses: coverallsapp/github-action@v2
       - name: Release
         run: npx semantic-release
         env:
