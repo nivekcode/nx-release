@@ -19,6 +19,16 @@
       "factory": "./src/generators/configure/generator",
       "schema": "./src/generators/configure/schema.json",
       "description": "configure generator"
+    },
+    "generate-release-config": {
+      "factory": "./src/generators/generate-release-config/generator",
+      "schema": "./src/generators/generate-release-config/schema.json",
+      "description": "generate-release-config generator"
+    },
+    "generate-gh-actions": {
+      "factory": "./src/generators/generate-gh-actions/generator",
+      "schema": "./src/generators/generate-gh-actions/schema.json",
+      "description": "generate-gh-actions generator"
     }
   }
 }

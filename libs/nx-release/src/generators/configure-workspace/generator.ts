@@ -1,12 +1,13 @@
-  import * as path from 'path';
-  import {execSync} from "child_process";
-  import {formatFiles, generateFiles, Tree,} from '@nx/devkit';
+import {execSync} from "child_process";
+import {formatFiles, Tree,} from '@nx/devkit';
 
-  import {getSpinner} from "../helpers/spinner.helper";
+import {getSpinner} from "../helpers/spinner.helper";
+import generateReleaseConfigGenerator from "../generate-release-config/generator";
+import generateGhActionsGenerator from "../generate-gh-actions/generator";
 
-  import {ConfigureWorkspaceGeneratorSchema} from './schema';
+import {ConfigureWorkspaceGeneratorSchema} from './schema';
 
-  export async function configureWorkspaceGenerator(
+export async function configureWorkspaceGenerator(
     tree: Tree,
     options: ConfigureWorkspaceGeneratorSchema
   ) {
@@ -21,13 +22,12 @@
       spinner.succeed();
     }
 
-    if (generateReleaseConfig || generateGhActions) {
-      // TODO will this also generate the release config if generateGhActions is set to true?
-      const artifacts = getArtifacts(generateReleaseConfig, generateGhActions);
-      spinner.text = `🐋 nx-release: generating ${artifacts}`;
-      spinner.start();
-      generateFiles(tree, path.join(__dirname, 'files'), '.', options);
-      spinner.succeed();
+    if (generateReleaseConfig) {
+      await generateReleaseConfigGenerator(tree, {});
+    }
+
+    if (generateGhActions) {
+      await generateGhActionsGenerator(tree, {});
     }
 
     await formatFiles(tree);
