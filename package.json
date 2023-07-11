@@ -9,7 +9,7 @@
     "g:configure-libraries": "nx generate @nx-release/nx-release:configure-libraries",
     "lint": "nx run-many -t lint",
     "test": "nx run-many -t test",
-    "test:coverage": "nx test --coverage -p nx-release",
+    "test:coverage": "nx test --coverage --coverageReporters=lcov -p nx-release",
     "lint:nx-release": "nx lint -p nx-release",
     "test:nx-release": "nx test -p nx-release",
     "build": "nx run-many -t build",
