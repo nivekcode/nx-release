@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/kreuzerk/nx-release/compare/v3.1.0...v3.1.1) (2023-07-11)
+
+
+### Bug Fixes
+
+* 🐛 update tslib dep ([8464424](https://github.com/kreuzerk/nx-release/commit/84644240b9a34cf5babb0cb0bc7fdd3e1941ae1f))
+
 ## [3.1.0](https://github.com/kreuzerk/nx-release/compare/v3.0.0...v3.1.0) (2023-07-11)
 
 
