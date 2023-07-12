@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/kreuzerk/nx-release/compare/v3.1.3...v3.1.4) (2023-07-12)
+
+
+### Bug Fixes
+
+* 🐛 install missing conventional commits dep ([4671b5e](https://github.com/kreuzerk/nx-release/commit/4671b5e04d46edadba2221e510edd2e3fdb29b0b))
+
 ## [3.1.3](https://github.com/kreuzerk/nx-release/compare/v3.1.2...v3.1.3) (2023-07-11)
 
 
