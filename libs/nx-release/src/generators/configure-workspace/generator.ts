@@ -25,7 +25,7 @@ export async function configureWorkspaceGenerator(
     if (installDeps) {
       spinner.text = '🐋 nx-release: Installing dependencies';
       spinner.start();
-      execSync(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property --force`);
+      execSync(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property conventional-changelog-conventionalcommits --force`);
       spinner.succeed();
     }
 
