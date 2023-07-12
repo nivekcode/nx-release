@@ -17,6 +17,12 @@ The library provides generators and executors:
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Configuring the workspace](#configuring-the-workspace)
+  - [GitHub repository setup](#github-repository-setup)
+    - [1. Provide access tokens](#1-provide-access-tokens)
+    - [2. Actions write permissions](#2-actions-write-permissions)
 - [Generators](#generators)
   - [configure](#configure)
   - [configure-workspace](#configure-workspace)

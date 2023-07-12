@@ -28,7 +28,7 @@ describe('configure-workspace generator', () => {
     }) as any);
 
     await configureWorkspaceGenerator(tree, options);
-    expect(childProcess.execSync).toHaveBeenCalledWith(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property --force`);
+    expect(childProcess.execSync).toHaveBeenCalledWith(`npm i -D @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/exec @semantic-release/git @semantic-release/release-notes-generator nx-release replace-json-property conventional-changelog-conventionalcommits --force`);
   });
 
   it('should generate the release config if the "generateReleaseConfig" flag is set', async () => {
