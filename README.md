@@ -4,9 +4,9 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This library contains executors and generators
+This library contains executors and generators.
 
-Your go-to open-source library for effortless semantic releases of NPM libraries within a monorepo. This repository provides generators and executors for a fully automated release setup that contains commit analyzation, automated versioning, changelog generation and publishing.
+Your go-to open-source library for effortless semantic releases of NPM libraries within a monorepo. This repository provides generators and executors for a fully automated release setup that contains commit analysis, automated versioning, changelog generation, and publishing.
 
 The library provides generators and executors:
 
@@ -46,21 +46,21 @@ The library provides generators and executors:
 
 ## Configuring the workspace
 
-To configure your Nx workspace for releasing you can invoke the main generator provided by `nx-release`.
+To configure your Nx workspace for releasing, you can invoke the main generator provided by `nx-release`.
 
 ```npx nx g nx-release:configure```
 
-This comman will prompt all the required options.
+This command will prompt all the required options.
 
 ## GitHub repository setup
 
-To enable full automated releases you have to configure your GitHub repository in two steps:
+To enable full automated releases, you have to configure your GitHub repository in two steps:
 
 ### 1. Provide access tokens
 
-To enable fully automated release we need access rights to publish the artifact to npm and to commit back to your repository. Therefore you have to provide the following tokens as action secrets.
+To enable a fully automated release, we need access rights to publish the artifact to npm and commit back to your repository. Therefore you have to provide the following tokens as action secrets.
 
-> To create a action secret navigate to your GitHub repoistory / Settings / Secrets and Variables / Actions / New Repository secret
+> To create an action secret navigate to your GitHub repository / Settings / Secrets and Variables / Actions / New Repository secret
 
 Here you have to provide the following two secrets:
 
@@ -71,19 +71,19 @@ Those tokens will then be picked up and provided as environment variables by the
 
 ### 2. Actions write permissions
 
-Since our workflow will commit back release artifacts such as `CHANGELOG`, tags and update versions inside the `package.json` our actions need write permissions. To give GitHub actions write permissions navigate again to your repository then go to `Settings / Actions / General / Workflow Permissions / Read and write permissions / Save`.
+Since our workflow will commit back release artifacts such as `CHANGELOG`, tags, and update versions inside the `package.json`, our actions need write permissions. To give GitHub Actions write permissions, navigate again to your repository, then go to `Settings / Actions / General / Workflow Permissions / Read and write permissions / Save`.
 
 # Generators
 
-The provided generators help you setup automated library releasing in an existing NX workspace. This process works for all kind of libraries since its framework agnostic. The following generators are provided:
+The provided generators help you set up an automated library-releasing process in an existing NX workspace. This process works for all kinds of libraries since it's framework-agnostic. The following generators are provided:
 
 ## configure
 
-The `configure` workspace generator allows you to setup the workspace plus the libraries of you choice. Internally this generator calls the `configure-workspace` as well as the `configure-libraries` generator. The generator can be invoked with the following command:
+The `configure` workspace generator allows you to set up the workspace plus the libraries of your choice. Internally this generator calls the `configure-workspace` as well as the `configure-libraries` generator. The generator can be invoked with the following command:
 
 ```npx nx g nx-release:configure```
 
-The generators provides the follwing options:
+The generators provide the following options:
 
 | option                | description                                                  | default | prompted |
 | --------------------- | ------------------------------------------------------------ | ------- | -------- |
@@ -96,7 +96,7 @@ The generators provides the follwing options:
 
 ```npx nx g nx-release:configure-workspace```
 
-The `configure-workspace` generator allows you to setup automated releases on a **workspace level only**. The generator will then prompt the following options:
+The `configure-workspace` generator allows you to set up automated releases on a **workspace level only**. The generator will then prompt the following options:
 
 | option                | description                                                  | default | prompted |
 | --------------------- | ------------------------------------------------------------ | ------- | -------- |
@@ -108,7 +108,7 @@ The `configure-workspace` generator allows you to setup automated releases on a 
 
 ```npx nx g nx-release:configure-library```
 
-The `configure-library`generator sets up a library for semantic release. When setting up the library it will use some of the executors provided by `nx-release`.
+The `configure-library` generator sets up a library for semantic release. When setting up the library, it will use some of the executors provided by `nx-release`.
 
 | option              | description                                          | default | prompted                            |
 | ------------------- | ---------------------------------------------------- | ------- | ----------------------------------- |
@@ -119,7 +119,7 @@ The `configure-library`generator sets up a library for semantic release. When se
 
 ```npx nx g nx-release:configure-libraries```
 
-The `configure-libraries`generator sets up a multiple libraries for semantic release. When setting up the libraries it will use some of the executors provided by `nx-release`.
+The `configure-libraries` generator sets up multiple libraries for semantic release. When setting up the libraries, it will use some of the executors provided by `nx-release`.
 
 | option              | description                                          | default | prompted                          |
 | ------------------- | ---------------------------------------------------- | ------- | --------------------------------- |
@@ -130,10 +130,10 @@ The `configure-libraries`generator sets up a multiple libraries for semantic rel
 
 ```npx nx g nx-release:generate-gh-actions```
 
-This generator can be used to generate two workflow files for automated releasing. This generator will generate the following two files:
+This generator can be used to generate two workflow files for automated releases. This generator will generate the following two files:
 
 - ci.yml (this file configures a pipeline that is run on Pull request)
-- release.yml (file that releases the library / by default it has to be triggered manually)
+- release.yml (file that releases the library / by default; it has to be triggered manually)
 
 ## generate-release-config
 
@@ -145,8 +145,8 @@ This generator generates a `release.config.js` file at the root of your project.
 
 ## npm-publish
 
-As the name indicates the `npm-publish` generator can be used to publish a library to NPM. To
-do so **the executor requires a `NPM_TOKEN` to be present as a Node environment variable**.
+As the name indicates, the `npm-publish` generator can be used to publish a library to NPM. To
+do so, **the executor requires a `NPM_TOKEN` to be present as a Node environment variable**.
 
 
 ## update-version
@@ -155,7 +155,7 @@ This executor updates the `package.json` version in the specified library. The e
 ## build-update-publish
 This executor combines the previous two executors and additionally performs a release.
 
-**This command expects a valid NPM token to be present as a `NPM_TOKEN` environment variable and the new release version to be present as a `VERSION` variable**.
+**This command expects a valid NPM token to be present as an `NPM_TOKEN` environment variable and the new release version to be present as a `VERSION` variable**.
 
 ## Contributors ✨
 
@@ -186,4 +186,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
