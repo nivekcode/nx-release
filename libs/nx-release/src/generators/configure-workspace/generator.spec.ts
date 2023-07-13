@@ -1,8 +1,8 @@
 import {createTreeWithEmptyWorkspace} from '@nx/devkit/testing';
-import {Tree} from '@nx/devkit';
-
 import * as childProcess from 'child_process';
 import * as nXdevKit from '@nx/devkit';
+import {Tree} from '@nx/devkit';
+
 import * as spinnerHelper from '../helpers/spinner.helper';
 
 import {configureWorkspaceGenerator} from './generator';
