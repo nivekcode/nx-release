@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "ajitzero",
+      "name": "Ajit Panigrahi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19947758?v=4",
+      "profile": "https://beta.ajitpanigrahi.com",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "nx-release",
+  "projectOwner": "kreuzerk"
+}
