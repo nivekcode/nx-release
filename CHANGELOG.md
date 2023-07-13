@@ -1,3 +1,10 @@
+## [3.1.5](https://github.com/kreuzerk/nx-release/compare/v3.1.4...v3.1.5) (2023-07-13)
+
+
+### Bug Fixes
+
+* 🐛 trigger release ([d5b78a3](https://github.com/kreuzerk/nx-release/commit/d5b78a3f1139147dc1374e7a1ffc4b25c1028f7b))
+
 ## [3.1.4](https://github.com/kreuzerk/nx-release/compare/v3.1.3...v3.1.4) (2023-07-12)
 
 
