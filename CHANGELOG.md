@@ -1,3 +1,10 @@
+## [3.1.6](https://github.com/kreuzerk/nx-release/compare/v3.1.5...v3.1.6) (2023-09-27)
+
+
+### Bug Fixes
+
+* 🐛 add missing inquirer dependency ([c05a44b](https://github.com/kreuzerk/nx-release/commit/c05a44bef872c0acce6c2d1f609dcb5db45c4782))
+
 ## [3.1.5](https://github.com/kreuzerk/nx-release/compare/v3.1.4...v3.1.5) (2023-07-13)
 
 
