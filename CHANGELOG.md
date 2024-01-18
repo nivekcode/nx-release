@@ -1,3 +1,10 @@
+## [3.2.0](https://github.com/kreuzerk/nx-release/compare/v3.1.6...v3.2.0) (2024-01-18)
+
+
+### Features
+
+* **npm-publish:** add option to specify npm registry ([f576088](https://github.com/kreuzerk/nx-release/commit/f5760886cb332702a7fb3e025ec3e2148f50bc16))
+
 ## [3.1.6](https://github.com/kreuzerk/nx-release/compare/v3.1.5...v3.1.6) (2023-09-27)
 
 
