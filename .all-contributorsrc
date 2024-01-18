@@ -15,6 +15,17 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "canserkanuren",
+      "name": "Can Serkan UREN",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22659909?v=4",
+      "profile": "https://github.com/canserkanuren",
+      "contributions": [
+        "code",
+        "ideas",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
