@@ -9,8 +9,9 @@ export default async function runExecutor(options: NpmPublishExecutorSchema,
                                           context: ExecutorContext
 ) {
   const sourceRoot = `./dist/${getRoot(context)}`;
+  const registry: string = process.env.NPM_REGISTRY || 'registry.npmjs.org'
   execSync(
-    `cd ${sourceRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
+    `cd ${sourceRoot} && echo '//${registry}/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
   );
   return {
     success: true,
