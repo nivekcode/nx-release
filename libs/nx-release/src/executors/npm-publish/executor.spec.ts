@@ -25,13 +25,13 @@ describe('NpmPublish Executor', () => {
     /* eslint-disable */
     jest.spyOn(projectHelpers, 'getRoot').mockReturnValue(mockRoot);
 
-    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
+    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish`
     const output = await executor({}, context);
 
     expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand);
     expect(output.success).toBe(true);
   });
-  
+
   it('should execSync with a specific npm registry if provided with one', async () => {
     const mockRoot = 'libs/my-domain/foo';
     const context = {
@@ -44,7 +44,7 @@ describe('NpmPublish Executor', () => {
     /* eslint-disable */
     jest.spyOn(projectHelpers, 'getRoot').mockReturnValue(mockRoot);
 
-    const expectedCommand = `cd ./dist/${mockRoot} && echo '//${registry}/:_authToken=${process.env.NPM_TOKEN}' > .npmrc && npm publish`
+    const expectedCommand = `cd ./dist/${mockRoot} && echo '//${registry}/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish`
     const output = await executor({}, context);
 
     expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand);
