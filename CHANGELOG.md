@@ -1,3 +1,10 @@
+## [3.3.0](https://github.com/kreuzerk/nx-release/compare/v3.2.0...v3.3.0) (2024-01-20)
+
+
+### Features
+
+* **npm-publish:** do not override current .npmrc file ([c71f7dd](https://github.com/kreuzerk/nx-release/commit/c71f7dd000593d4ffb869a5d26db4850690adc76))
+
 ## [3.2.0](https://github.com/kreuzerk/nx-release/compare/v3.1.6...v3.2.0) (2024-01-18)
 
 
