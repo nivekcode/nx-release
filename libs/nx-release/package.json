@@ -11,5 +11,8 @@
   "repository": "https://github.com/kreuzerk/nx-release",
   "readme": "https://github.com/kreuzerk/nx-release/blob/main/README.md",
   "bugs": "https://github.com/kreuzerk/nx-release/issues",
-  "author": "kreuzerk"
+  "author": "kreuzerk",
+  "publishConfig": {
+    "access": "public"
+  }
 }
