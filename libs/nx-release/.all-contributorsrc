@@ -1,6 +1,6 @@
 {
   "projectName": "nx-release",
-  "projectOwner": "kreuzerk",
+  "projectOwner": "CarlosGilB",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": ["README.md"],
@@ -9,7 +9,7 @@
   "commitConvention": "angular",
   "contributors": [
     {
-      "login": "kreuzerk",
+      "login": "CarlosGilB",
       "name": "Nivek",
       "avatar_url": "https://avatars.githubusercontent.com/u/5468954?v=4",
       "profile": "https://medium.com/@kevinkreuzer",
