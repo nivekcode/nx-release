@@ -19,8 +19,6 @@ jobs:
       - name: Lint affected
         run: npx nx affected -t lint
       - name: Test affected
-        run: npm run test:coverage
-      - name: Report coverage
-        uses: coverallsapp/github-action@v2
+        run: npx nx affected -t test --configuration=ci
       - name: Build affected
         run: npx nx affected -t build

@@ -23,19 +23,16 @@ module.exports = {
         changelogFile: `./CHANGELOG.md`,
       },
     ],
-    ["@semantic-release/exec", {
-      prepareCmd: `VERSION=\${nextRelease.version} npm run release`,
-    }],
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd: `VERSION=\${nextRelease.version} npx nx run-many -t release && VERSION=\${nextRelease.version} npx -p replace-json-property rjp ./package.json version \${nextRelease.version}`,
+      },
+    ],
     [
       '@semantic-release/git',
       {
-        assets: [
-          `libs/foo/package.json`,
-          `libs/bar/package.json`,
-          `libs/baz/package.json`,
-          `package.json`,
-          `CHANGELOG.md`
-        ],
+        assets: [`libs/**/package.json`, `package.json`, `CHANGELOG.md`],
         message:
           'chore(release): -v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
