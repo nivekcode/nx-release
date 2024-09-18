@@ -14,7 +14,7 @@
     "bump-versions": "rjp package.json version $VERSION && rjp libs/nx-release/package.json version $VERSION",
     "release": "VERSION=$VERSION npm run bump-versions && npm run build && nx run-many -t publish"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@nx/devkit": "16.5.0",
     "@nx/plugin": "^16.5.0",
