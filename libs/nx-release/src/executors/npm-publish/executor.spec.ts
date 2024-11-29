@@ -25,7 +25,7 @@ describe('NpmPublish Executor', () => {
     /* eslint-disable */
     jest.spyOn(projectHelpers, 'getRoot').mockReturnValue(mockRoot);
 
-    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=latest`;
+    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=latest`
     const output = await executor({}, context);
 
     expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand);
@@ -44,7 +44,7 @@ describe('NpmPublish Executor', () => {
     /* eslint-disable */
     jest.spyOn(projectHelpers, 'getRoot').mockReturnValue(mockRoot);
 
-    const expectedCommand = `cd ./dist/${mockRoot} && echo '//${registry}/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=latest`;
+    const expectedCommand = `cd ./dist/${mockRoot} && echo '//${registry}/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=latest`
     const output = await executor({}, context);
 
     expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand);
@@ -63,7 +63,7 @@ describe('NpmPublish Executor', () => {
     /* eslint-disable */
     jest.spyOn(projectHelpers, 'getRoot').mockReturnValue(mockRoot);
 
-    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=${channel}`;
+    const expectedCommand = `cd ./dist/${mockRoot} && echo '//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}' >> .npmrc && npm publish --tag=${channel}`
     const output = await executor({}, context);
 
     expect(child_process.execSync).toHaveBeenCalledWith(expectedCommand);
