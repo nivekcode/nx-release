@@ -1,6 +1,6 @@
-import * as child_process from 'child_process';
+import * as child_process from "child_process";
 
-import * as projectHelpers from '../helpers/projects.helpers';
+import * as projectHelpers from "../helpers/projects.helpers";
 
 import executor from './executor';
 
@@ -17,7 +17,8 @@ describe('NpmPublish Executor', () => {
 
   it('should execSync with a default libPath if no libPath was provided', async () => {
     const mockRoot = 'libs/my-domain/foo';
-    const context = {} as any;
+    const context = {
+    } as any;
 
     /* eslint-disable */
     jest.spyOn(child_process, 'execSync').mockImplementation((() => {}) as any);
@@ -33,7 +34,8 @@ describe('NpmPublish Executor', () => {
 
   it('should execSync with a specific npm registry if provided with one', async () => {
     const mockRoot = 'libs/my-domain/foo';
-    const context = {} as any;
+    const context = {
+    } as any;
     const registry = 'specific-npm-registry.org';
     process.env = Object.assign(process.env, { NPM_REGISTRY: registry });
 
@@ -51,7 +53,8 @@ describe('NpmPublish Executor', () => {
 
   it('should execSync with a specific npm channel if provided with one', async () => {
     const mockRoot = 'libs/my-domain/foo';
-    const context = {} as any;
+    const context = {
+    } as any;
     const channel = 'beta';
     process.env = Object.assign(process.env, { CHANNEL: channel });
 
