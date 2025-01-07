@@ -1,7 +1,7 @@
 ![](https://github.com/kreuzerk/nx-release/blob/main/libs/nx-release/assets/nx-release-logo.svg)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This library contains executors and generators.
@@ -166,8 +166,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://beta.ajitpanigrahi.com"><img src="https://avatars.githubusercontent.com/u/19947758?v=4?s=100" width="100px;" alt="Ajit Panigrahi"/><br /><sub><b>Ajit Panigrahi</b></sub></a><br /><a href="https://github.com/kreuzerk/nx-release/commits?author=ajitzero" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/canserkanuren"><img src="https://avatars.githubusercontent.com/u/22659909?v=4?s=100" width="100px;" alt="Can Serkan UREN"/><br /><sub><b>Can Serkan UREN</b></sub></a><br /><a href="https://github.com/kreuzerk/nx-release/commits?author=canserkanuren" title="Code">💻</a> <a href="#ideas-canserkanuren" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/kreuzerk/nx-release/commits?author=canserkanuren" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://beta.ajitpanigrahi.com"><img src="https://avatars.githubusercontent.com/u/19947758?v=4?s=100" width="100px;" alt="Ajit Panigrahi"/><br /><sub><b>Ajit Panigrahi</b></sub></a><br /><a href="https://github.com/nivekcode/nx-release/commits?author=ajitzero" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/canserkanuren"><img src="https://avatars.githubusercontent.com/u/22659909?v=4?s=100" width="100px;" alt="Can Serkan UREN"/><br /><sub><b>Can Serkan UREN</b></sub></a><br /><a href="https://github.com/nivekcode/nx-release/commits?author=canserkanuren" title="Code">💻</a> <a href="#ideas-canserkanuren" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/nivekcode/nx-release/commits?author=canserkanuren" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/markuczy"><img src="https://avatars.githubusercontent.com/u/129275100?v=4?s=100" width="100px;" alt="markuczy"/><br /><sub><b>markuczy</b></sub></a><br /><a href="https://github.com/nivekcode/nx-release/commits?author=markuczy" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
