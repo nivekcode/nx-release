@@ -26,6 +26,15 @@
         "ideas",
         "test"
       ]
+    },
+    {
+      "login": "markuczy",
+      "name": "markuczy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/129275100?v=4",
+      "profile": "https://github.com/markuczy",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -33,5 +42,5 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "projectName": "nx-release",
-  "projectOwner": "kreuzerk"
+  "projectOwner": "nivekcode"
 }
