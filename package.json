@@ -1,6 +1,6 @@
 {
   "name": "@nx-release/source",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "license": "MIT",
   "scripts": {
     "g:configure": "nx generate @nx-release/nx-release:configure",

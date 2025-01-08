@@ -1,3 +1,17 @@
+## [3.4.0](https://github.com/kreuzerk/nx-release/compare/v3.3.0...v3.4.0) (2025-01-08)
+
+
+### Features
+
+* npm publish uses distribution tags ([8715172](https://github.com/kreuzerk/nx-release/commit/8715172a939c524d2fcef37d8090b000891a096a))
+
+
+### Refactoring
+
+* remove trailing semicolon ([ed04275](https://github.com/kreuzerk/nx-release/commit/ed042756c90dc84587f18eb2ff3d99e280916679))
+* revert formatting ([4b3005d](https://github.com/kreuzerk/nx-release/commit/4b3005d239fb4836ec290404002a80875d586a07))
+* revert further format changes ([a04186d](https://github.com/kreuzerk/nx-release/commit/a04186d853bd5feb36b96abc7e8471bb354dde4c))
+
 ## [3.3.0](https://github.com/kreuzerk/nx-release/compare/v3.2.0...v3.3.0) (2024-01-20)
 
 
